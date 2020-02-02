@@ -30,7 +30,7 @@ module Improvements
       Move.find(hunters_improvement.improvable&.dig('id'))
     rescue ActiveRecord::RecordNotFound => e
       hunters_improvement.errors.add(:improvable, e.message)
-      return false
+      false
     end
 
     def move_matches_playbook?(move)

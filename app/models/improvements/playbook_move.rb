@@ -39,7 +39,7 @@ module Improvements
       Move.find(hunters_improvement.improvable&.dig('id'))
     rescue ActiveRecord::RecordNotFound => e
       hunters_improvement.errors.add(:improvable, e.message)
-      return false
+      false
     end
 
     def improvable_options(hunter)
