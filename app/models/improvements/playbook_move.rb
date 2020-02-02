@@ -23,7 +23,6 @@ module Improvements
 
     def validate_improvable(hunters_improvement)
       move = move(hunters_improvement)
-      hunters_improvement.errors.add(:improvable, 'is not a subclass of Move.') if not_a_move?(move)
       hunters_improvement.errors.add(:improvable, "is not from playbook #{playbook.name}") unless move_matches_playbook?(move)
     end
 
